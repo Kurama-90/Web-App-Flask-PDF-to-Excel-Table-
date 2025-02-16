@@ -1,93 +1,90 @@
 # Web App Flask PDF to Excel Table
 
-Ce projet permet de convertir des fichiers PDF contenant des tables en fichiers Excel à l'aide d'une application web développée avec Flask. L'application extrait les tables de chaque page du PDF et les combine dans un fichier Excel téléchargeable.
+This project allows converting PDF files containing tables into Excel files using a web application developed with Flask. The application extracts tables from each page of the PDF and combines them into a downloadable Excel file.
 
-## Fonctionnalités
+## Features
 
-- **Conversion PDF en Excel** : Extrait les tables contenues dans un fichier PDF et les convertit en un fichier Excel.
-- **Support de plusieurs pages** : Extrait les tables de toutes les pages du PDF, et non seulement de la première.
-- **Interface utilisateur simple** : Une interface web intuitive pour télécharger le fichier PDF et récupérer le fichier Excel converti.
+- **PDF to Excel Conversion**: Extracts tables from a PDF file and converts them into an Excel file.
+- **Multi-page Support**: Extracts tables from all pages of the PDF, not just the first page.
+- **Simple User Interface**: An intuitive web interface to upload the PDF file and retrieve the converted Excel file.
 
-## Technologies utilisées
+## Technologies Used
 
-- **Flask** : Framework web Python pour développer l'application.
-- **pdfplumber** : Librairie Python pour extraire des tables à partir de fichiers PDF.
-- **pandas** : Librairie pour manipuler les données et les convertir en format Excel.
-- **HTML, CSS** : Pour l'interface utilisateur.
-- **PythonAnywhere** : Hébergement de l'application web en ligne.
+- **Flask**: Python web framework for building the application.
+- **pdfplumber**: Python library for extracting tables from PDF files.
+- **pandas**: Library for manipulating data and converting it into Excel format.
+- **HTML, CSS**: For the user interface.
+- **PythonAnywhere**: Hosting the web application online.
 
-# Déployer une Application Flask sur PythonAnywhere
+# Deploying a Flask Application on PythonAnywhere
 
-Suivez ces étapes pour déployer votre application Flask sur **PythonAnywhere**.
+Follow these steps to deploy your Flask application on **PythonAnywhere**.
 
-## Prérequis
+## Prerequisites
 
-Avant de commencer, assurez-vous que vous avez :
-- Un compte sur **PythonAnywhere** (si vous n'en avez pas, créez-en un sur [PythonAnywhere](https://www.pythonanywhere.com/)).
-- Le code de votre projet prêt à être déployé.
+Before starting, make sure you have:
+- An account on **PythonAnywhere** (if you don’t have one, create it on [PythonAnywhere](https://www.pythonanywhere.com/)).
+- Your project code ready to be deployed.
 
-## Étapes de Déploiement
+## Deployment Steps
 
-### 1. Créer un Compte PythonAnywhere
+### 1. Create a PythonAnywhere Account
 
-- Allez sur [PythonAnywhere](https://www.pythonanywhere.com/).
-- Créez un compte ou connectez-vous si vous en avez déjà un.
+- Go to [PythonAnywhere](https://www.pythonanywhere.com/).
+- Create an account or log in if you already have one.
 
-### 2. Créer une Nouvelle Application Web
+### 2. Create a New Web Application
 
-1. Une fois connecté à votre compte PythonAnywhere, cliquez sur l'onglet **"Web"** en haut de la page.
-2. Cliquez sur le bouton **"Add a new web app"**.
-3. Sélectionnez le **nom de domaine** que vous souhaitez (par exemple, `votre_utilisateur.pythonanywhere.com`).
-4. Choisissez le framework **Flask** parmi les options proposées.
-5. Sélectionnez la version de Python que vous utilisez pour votre application.
+1. Once logged into your PythonAnywhere account, click on the **"Web"** tab at the top of the page.
+2. Click the **"Add a new web app"** button.
+3. Select the **domain name** you want (e.g., `your_username.pythonanywhere.com`).
+4. Choose the **Flask** framework from the available options.
+5. Select the version of Python you're using for your application.
 
-### 3. Configurer l'Application Flask sur PythonAnywhere
+### 3. Configure the Flask Application on PythonAnywhere
 
-1. **Télécharger votre code sur PythonAnywhere** :
-   - Vous pouvez utiliser l'éditeur de fichiers intégré pour créer des fichiers ou charger vos fichiers directement via **SFTP**.
-   - Vous pouvez également utiliser **Git** pour cloner votre repository GitHub directement sur PythonAnywhere :
+1. **Upload Your Code to PythonAnywhere**:
+   - You can use the built-in file editor to create files or upload your files directly via **SFTP**.
+   - You can also use **Git** to clone your GitHub repository directly on PythonAnywhere.
 
-2. **Configurer le WSGI** :
-   - PythonAnywhere crée automatiquement un fichier `wsgi.py` pour votre application Flask.
-   - Modifiez ce fichier en ajoutant les bonnes configurations. Le fichier `wsgi.py` devrait ressembler à ceci :
+2. **Configure the WSGI File**:
+   - PythonAnywhere automatically creates a `wsgi.py` file for your Flask app.
+   - Modify this file to add the proper configurations. Your `wsgi.py` file should look like this:
      ```python
-     WSGI.py
+     # WSGI.py
      import sys
-     sys.path.insert(0, '/home/votre_utilisateur')  # Remplacez ce chemin par le bon chemin de votre répertoire
-     Importation de l'application Flask depuis MH.py
-     from MH import app as application  # L'instance 'app' de votre application Flask est renvoyée sous le nom 'application'voyée sous le nom 'application'
+     sys.path.insert(0, '/home/your_username')  # Replace with the correct path to your project directory
+     from MH import app as application  # The 'app' instance of your Flask application is returned as 'application'
      ```
-   - Remplacez `votre_utilisateur` par votre nom d'utilisateur PythonAnywhere et assurez-vous que le chemin vers votre projet est correct.
-  
- 3. **Explication des dépendances** :
+   - Replace `your_username` with your PythonAnywhere username and ensure the path to your project is correct.
 
-- **Flask** : Framework web léger pour développer des applications web en Python.
-- **pdfplumber** : Bibliothèque pour extraire des tables à partir de fichiers PDF.
-- **pandas** : Bibliothèque de manipulation et d'analyse de données, utilisée pour convertir les tables extraites en format Excel.
-- **openpyxl** : Bibliothèque nécessaire pour écrire des fichiers Excel avec Pandas.
+### 4. Dependency Explanation
 
-### 4. Configurer les Dossiers de Fichiers
+- **Flask**: A lightweight web framework for building web applications in Python.
+- **pdfplumber**: A library for extracting tables from PDF files.
+- **pandas**: A data manipulation and analysis library, used to convert the extracted tables into Excel format.
+- **openpyxl**: A library needed to write Excel files with pandas.
 
-1. Assurez-vous que les dossiers `uploads/` et `outputs/` sont créés dans le répertoire de votre projet. Ces dossiers sont utilisés pour stocker les fichiers téléchargés et générés.
-   
-2. Vous pouvez créer ces dossiers via l'interface de gestion des fichiers de PythonAnywhere ou directement depuis la console PythonAnywhere :
+### 5. Configure File Directories
+
+1. Ensure that the `uploads/` and `outputs/` directories are created within your project directory. These folders are used to store the uploaded files and the generated files.
+
+2. You can create these directories using PythonAnywhere’s file management interface or directly from the PythonAnywhere console:
    ```bash
-   mkdir /home/votre_utilisateur/pdf-to-excel-converter/uploads
-   mkdir /home/votre_utilisateur/pdf-to-excel-converter/outputs
+   mkdir /home/your_username/pdf-to-excel-converter/uploads
+   mkdir /home/your_username/pdf-to-excel-converter/outputs
 
-## 5. Redémarrer l'Application Web
+## 6. Restart the Web Application
 
-Une fois toutes les étapes de configuration terminées, revenez à l'onglet **"Web"** de PythonAnywhere.
+Once all configuration steps are completed, return to the "Web" tab on PythonAnywhere.
 
-1. Cliquez sur le bouton **"Reload"** pour redémarrer votre application et appliquer les changements.
+Click the "Reload" button to restart your application and apply the changes.
 
-## 6. Accéder à Votre Application Web
-
-Une fois l'application redémarrée, vous pouvez accéder à votre application Flask via l'URL suivante :
+## 7. Access Your Web Application
 
 [https://mhamed.pythonanywhere.com/](https://mhamed.pythonanywhere.com/) 
 
-(remplacez `mhamed` par votre nom d'utilisateur PythonAnywhere).
+(replace your_username with your PythonAnywhere username).
 
 ## Contributing
 Feel free to contribute by submitting issues or pull requests.

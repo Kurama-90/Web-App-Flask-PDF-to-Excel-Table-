@@ -84,7 +84,7 @@ Click the "Reload" button to restart your application and apply the changes.
 
 [https://mhamed.pythonanywhere.com/](https://mhamed.pythonanywhere.com/) 
 
-(replace your_username with your PythonAnywhere username).
+(replace mhamed with your PythonAnywhere username).
 
 ## Contributing
 Feel free to contribute by submitting issues or pull requests.

@@ -1,0 +1,6 @@
+# WSGI.py
+import sys
+sys.path.insert(0, '/home/mhamed')  # Remplacez ce chemin par le bon chemin de votre répertoire
+
+# Importation de l'application Flask depuis MH.py
+from MH import app as application  # L'instance 'app' de votre application Flask est renvoyée sous le nom 'application'

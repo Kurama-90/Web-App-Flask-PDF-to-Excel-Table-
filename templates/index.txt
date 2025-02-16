@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertir PDF en Excel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100%;
+            background: url('https://imgcdn.stablediffusionweb.com/2024/10/4/fce112c7-25af-4546-948e-d964993b0c69.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+        .container {
+            position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        form {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label {
+            font-size: 1.2rem;
+        }
+        input[type="file"] {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            background: #ff6f61;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #ff3b2f;
+        }
+        .sakura {
+            position: absolute;
+            top: -50px;
+            width: 10px;
+            height: 10px;
+            background: pink;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="animate__animated animate__fadeInDown">Convertir PDF en Excel</h1>
+            <form action="/convert" method="post" enctype="multipart/form-data" class="animate__animated animate__fadeInUp">
+                <label for="pdf_file">Sélectionnez un fichier PDF :</label><br>
+                <input type="file" name="pdf_file" accept=".pdf" required><br><br>
+                <button type="submit">Convertir</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sakura (cherry blossom) animation -->
+    <script>
+        function createSakura() {
+            const sakura = document.createElement('div');
+            sakura.classList.add('sakura');
+            sakura.style.left = Math.random() * window.innerWidth + 'px';
+            sakura.style.animationDuration = Math.random() * 3 + 2 + 's';
+            sakura.style.opacity = Math.random();
+            document.body.appendChild(sakura);
+
+            setTimeout(() => {
+                sakura.remove();
+            }, 5000);
+        }
+
+        setInterval(createSakura, 300);
+    </script>
+</body>
+</html>
